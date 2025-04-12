@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Iliyas ❤️ Ammu - Wedding Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+      animation: fadeIn 3s ease-in;
+      text-align: center;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    header {
+      padding: 2rem;
+      background: rgba(255, 192, 203, 0.4);
+      backdrop-filter: blur(6px);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #d63384;
+    }
+
+    .couple-photo {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #fff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      margin: 1rem auto;
+      display: block;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    section {
+      padding: 2rem 1rem;
+    }
+
+    .love-quote {
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #c2185b;
+      margin-top: 2rem;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .gift-box {
+      font-size: 1.5em;
+      background: #ff66a3;
+      color: white;
+      padding: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .gift-box:hover {
+      transform: scale(1.1);
+    }
+
+    .animated-gifts {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      animation: float 2s infinite alternate ease-in-out;
+      margin-top: 20px;
+    }
+
+    .gift {
+      font-size: 3rem;
+      animation: bounce 1s infinite;
+    }
+
+    .message {
+      margin-top: 30px;
+    }
+
+    .animate-text {
+      font-size: 1.4em;
+      color: #b8005d;
+      opacity: 0;
+      animation: fadeInText 1s forwards;
+    }
+
+    .animate-text:nth-child(1) { animation-delay: 0.5s; }
+    .animate-text:nth-child(2) { animation-delay: 1.5s; }
+    .animate-text:nth-child(3) { animation-delay: 2.5s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    footer {
+      background: #ffdde1;
+      padding: 1rem;
+      color: #555;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="love-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Iliyas ❤️ Ammu</h1>
+    <p>Together Forever 💑</p>
+  </header>
+
+  <!-- Couple Photos -->
+  <section>
+    <img src="couple2.jpg" alt="Iliyas" class="couple-photo">
+    <img src="couple1.jpg" alt="Ammu" class="couple-photo">
+    <p class="love-quote">"Two hearts, one soul. A forever love story begins."</p>
+  </section>
+
+  <!-- Wedding Details -->
+  <section>
+    <h2>Wedding Date</h2>
+    <p><strong>Date:</strong> Aprile 20, 2025<br>
+    <strong>Location:</strong> Murarbadhu, Kallakurichi</p>
+  </section>
+
+  <!-- Surprise Gift Box -->
+  <section>
+    <h2>🎁 A Surprise Gift for You</h2>
+    <p>Click the gift below to reveal your special surprise!</p>
+    <div class="gift-box" onclick="showSurprise()">
+      🎁 Tap to Open Gift
+    </div>
+
+    <div id="surprise" style="display:none;">
+      <div class="animated-gifts">
+        <div class="gift">🎀</div>
+        <div class="gift">🎉</div>
+        <div class="gift">💝</div>
+      </div>
+      <div class="message">
+        <p class="animate-text">Congratulation brother and sister to couple🫂</p>
+        <p class="animate-text">May the two of you continue to love unconditionally😍</p>
+        <p class="animate-text"> We wish your love be like a shining star, brightening even the darkest of times. Best Wishes!!💕</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Made with 💖 by Brothers and Sisters | © 2025
+  </footer>
+
+  <script>
+    function showSurprise() {
+      document.querySelector('.gift-box').style.display = 'none';
+      document.getElementById('surprise').style.display = 'block';
+      const music = document.getElementById("bg-music");
+    	music.muted = false;
+        music.play().catch(() => {
+   	   console.log("Autoplay blocked until interaction.",err);
+    });
+    }
+  </script>
+</body>
+</html>
